@@ -1,0 +1,147 @@
+/* ====================== Header =================================*/
+
+header.css-18ni7ap.e8zbici2{
+ background-color: #4183C4;
+}
+
+.e1fb0mya1.css-fblp2m.ex0cdmw0{
+  color: white;
+}
+/* ==================== Sidebar =================================*/
+
+div.css-6qob1r.e1fqkh3o3{
+  background-color: #4183C4;
+  border: none;
+  box-shadow: 0 6px 18px #2C3333;
+  /* top: 46px; */
+}
+
+/* div.css-1629p8f.e16nr0p31 h1{
+  color: #4183C4;
+  text-align: center;
+} */
+/* ======================= Body =================================*/
+
+
+/* section.main.css-uf99v8.egzxvld5{
+  background-image: linear-gradient(to bottom, #0E8388, #FFFFFF);
+} */
+
+span.css-10trblm.e16nr0p30 {
+  margin-left: 3px!important;
+  font-size: 40px!important ;
+  text-transform: uppercase;
+  background-image: linear-gradient(
+   -225deg,
+  #2C3333 0%,
+  #2E4F4F 29%,
+  #0E8388 67%,
+  #CBE4DE 100%
+ );
+ background-size: auto auto;
+ background-clip: border-box;
+ background-size: 200% auto;
+ color: #fff;
+ background-clip: text;
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+ animation: textclip 2s linear infinite;
+ display: inline-block;
+     font-size: 50px;
+}
+
+@keyframes textclip {
+ to {
+   background-position: 200% center;
+ }
+}
+
+.css-zt5igj:hover a {
+  opacity: 0;
+  transform: scale(1);
+  transition: none 0s ease 0s;
+}
+
+
+.e1fb0mya1.css-fblp2m.ex0cdmw0{
+  color: white;
+}
+
+.css-fblp2m.ex0cdmw0 h1{
+  color: white;
+}
+
+
+div.stButton > button:first-child {
+  margin-left: 20%;
+  margin-top: 15%;
+  display: inline-block;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  will-change: box-shadow,transform;
+  background: radial-gradient( 100% 100% at 100% 0%, #89E5FF 0%,#4183C4 100% );
+  box-shadow: 0px 2px 4px rgb(45 35 66 / 40%), 0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px rgb(58 65 111 / 50%);
+  padding: 0 32px;
+  border-radius: 6px;
+  color: #fff;
+  height: 48px;
+  font-size: 18px;
+  text-shadow: 0 1px 0 rgb(0 0 0 / 40%);
+  transition: box-shadow 0.15s ease,transform 0.15s ease;
+  }
+
+  div.stButton > button:first-child :active{
+      box-shadow: inset 0px 3px 7px #2C3333;
+      transform: translateY(2px);
+  }
+
+
+ div.css-1b0udgb.etr89bj0{
+
+  display: none;
+ }
+
+
+ div.css-1v0mbdj.etr89bj1{
+  opacity: 90%;
+  padding: 30px;
+  margin-left: 50px;
+ }
+
+ div.css-1629p8f.e16nr0p31 h1 {
+  font-size: 22px!important ;
+ margin-left: 25%;
+  text-transform: uppercase;
+  background-image: linear-gradient(
+   -225deg,
+  #4183C4 0%,
+  #FFFFFF 29%,
+  #0E8388 67%,
+  #CBE4DE 100%
+ );
+ background-size: auto auto;
+ background-clip: border-box;
+ background-size: 200% auto;
+ color: #fff;
+ background-clip: text;
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+ animation: textclip 2s linear infinite;
+ display: inline-block;
+     font-size: 50px;
+}
+
+@keyframes textclip {
+ to {
+   background-position: 200% center;
+ }
+}
+
+
+div.css-16idsys.e16nr0p34 p{
+  font-size: 20px!important ;
+  font-weight: bold;
+
+
+}
