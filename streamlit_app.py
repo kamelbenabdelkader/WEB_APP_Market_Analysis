@@ -4,8 +4,10 @@ from datetime import datetime
 import pandas as pd
 import pickle
 from PIL import Image
-import matplotlib.pyplot as plt
 from wordcloud import WordCloud
+import matplotlib.pyplot as plt
+from matplotlib.figure import Figure
+from matplotlib.axes import Axes
 
 
 # model = pickle.load(open('model.pkl', 'rb'))
@@ -42,6 +44,8 @@ def home_page():
     # User input for country
     country = st.text_input("Entrée un Pays:")
 
+
+
     # Button to trigger the API request
     if st.button("Envoyer"):
         if country:
@@ -55,6 +59,7 @@ def home_page():
 
                 # Displaying the results
                 st.table(items)
+
             else:
                 st.error("Error: Unable to retrieve items.")
         else:
@@ -68,10 +73,24 @@ def france_page():
     if response.status_code == 200:
                 # Parsing the JSON response
                 data = response.json()
-                items = data["items"]
+                # items = data["items"]
 
-                # Displaying the results as a table
-                st.table(items)
+                # # Displaying the results as a table
+                # st.table(items)
+
+                descriptions = [result[3] for result in data['items']]
+
+                # Générer et afficher le nuage de mots
+                fig: Figure
+                ax: Axes
+                fig, ax = plt.subplots()
+                wordcloud = WordCloud(background_color='white', width=1200, height=1200).generate(str(descriptions))
+                ax.imshow(wordcloud, interpolation='bilinear')
+                ax.axis('off')
+                st.pyplot(fig)
+
+
+# Générer et afficher le nuage de mots
 
         # # Grouping description based on countries
         #         z = data['Description'].groupby(data['Country'])
@@ -95,15 +114,31 @@ def portugal_page():
     st.title("Portugal")
 
 
-    response = requests.get(f"https://apimarketanalysis.azurewebsites.net/france")
+    response1 = requests.get(f"https://apimarketanalysis.azurewebsites.net/portugal")
 
-    if response.status_code == 200:
+    if response1.status_code == 200:
                 # Parsing the JSON response
-                data = response.json()
-                items = data["items"]
+                # data = response.json()
+                # items = data["items"]
 
                 # Displaying the results
-                st.table(items)
+                # st.table(items)
+                data = response1.json()
+                # items = data["items"]
+
+                # # Displaying the results as a table
+                # st.table(items)
+
+                descriptions = [result[3] for result in data['items']]
+
+                # Générer et afficher le nuage de mots
+                fig: Figure
+                ax: Axes
+                fig, ax = plt.subplots()
+                wordcloud = WordCloud(background_color='white', width=1200, height=1200).generate(str(descriptions))
+                ax.imshow(wordcloud, interpolation='bilinear')
+                ax.axis('off')
+                st.pyplot(fig)
     else:
                 st.error("Error: Unable to retrieve items.")
 
