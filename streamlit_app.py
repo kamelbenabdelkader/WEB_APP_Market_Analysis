@@ -244,7 +244,7 @@ def portugal_page():
 
                 descriptions = [result[3] for result in data['items']]
 
-                # Générer et afficher le nuage de mots
+                 # Générer et afficher le nuage de mots
                 fig: Figure
                 ax: Axes
                 fig, ax = plt.subplots()
@@ -252,6 +252,7 @@ def portugal_page():
                 ax.imshow(wordcloud, interpolation='bilinear')
                 ax.axis('off')
                 st.pyplot(fig)
+
     else:
                 st.error("Error: Unable to retrieve items.")
 
