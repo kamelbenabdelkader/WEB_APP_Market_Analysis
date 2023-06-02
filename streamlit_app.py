@@ -28,13 +28,13 @@ def local_css(file_name):
 local_css("style.css")
 
 
-# Appel à l'API pour récupérer les informations de vol
-url = "https://apimarketanalysis.azurewebsites.net/france"
-response = requests.get(url)
-dataFrance = response.json()
-url2 = "https://apimarketanalysis.azurewebsites.net/portugal"
-response = requests.get(url2)
-dataPortugal = response.json()
+# # Appel à l'API pour récupérer les informations de vol
+# url = "https://apimarketanalysis.azurewebsites.net/france"
+# response = requests.get(url)
+# dataFrance = response.json()
+# url2 = "https://apimarketanalysis.azurewebsites.net/portugal"
+# response1 = requests.get(url2)
+# dataPortugal = response1.json()
 
 def home_page():
     st.title("HOME")
