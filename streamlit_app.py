@@ -168,98 +168,98 @@ def france_page():
     else:
         st.error("Error: Unable to retrieve items.")
 
-def portugal_page():
+# def portugal_page():
 
-    st.title("Portugal")
-
-
-    response1 = requests.get(f"https://apimarketanalysis.azurewebsites.net/portugal")
-
-    if response1.status_code == 200:
-                # Parsing the JSON response
-                data = response1.json()
-                items = data["items"]
-
-                df = pd.DataFrame(items)
-
-                # Renommage des colonnes
-                df.columns = ["ID", "InvoiceNo", "StockCode", "Description", "Quantity",
-                            "InvoiceDate", "UnitPrice", "CustomerID", "Country"]
-
-                dfP= df.head(2)
-                # Convertir le DataFrame en HTML sans l'index
-                df_html = dfP.to_html(index=False)
-
-                # Affichage du tableau sans l'index
-                st.write(df_html, unsafe_allow_html=True)
-                # Affichage du DataFrame dans une table Streamlit
-                # Convert the dataset into the required format
-                # transactions = []
-                # for i in range(len(df)):
-                #     transaction = []
-                #     try:
-                #         transaction.append(str(df['InvoiceNo'][i]))
-                #         transaction.append(str(df['StockCode'][i]))
-                #         transaction.append(str(df['Quantity'][i]))
-                #         transaction.append(str(df['UnitPrice'][i]))
-                #         transaction.append(str(df['Description'][i]))
-                #         transaction.append(str(df['CustomerID'][i]))
-                #         transaction.append(str(df['InvoiceDate'][i]))
-                #         transactions.append(transaction)
-                #     except:
-                #         continue
+#     st.title("Portugal")
 
 
-                # st.write(len(transactions))
-                # st.write(transactions[:1])
+#     response1 = requests.get(f"https://apimarketanalysis.azurewebsites.net/portugal")
 
-                # # Perform frequent itemset mining using FPGrowth
-                # patterns = pyfpgrowth.find_frequent_patterns(transactions, 30)  # Adjust the support threshold as needed
+#     if response1.status_code == 200:
+#                 # Parsing the JSON response
+#                 data = response1.json()
+#                 items = data["items"]
 
-                # # Generate association rules from the frequent itemsets
-                # rules = pyfpgrowth.generate_association_rules(patterns, 0.7)  # Adjust the confidence threshold as needed
-                # # Create a DataFrame for frequent itemsets
-                # frequent_itemsets_df = pd.DataFrame.from_records(list(patterns.items()), columns=['Itemset', 'Support'])
-                # frequent_itemsets_df_sorted = frequent_itemsets_df.sort_values(by ='Support', ascending=False)
+#                 df = pd.DataFrame(items)
 
-                # # Create a DataFrame for association rules
-                # association_rules_df = pd.DataFrame.from_records(list(rules.items()), columns=['Rule', 'Confidence'])
+#                 # Renommage des colonnes
+#                 df.columns = ["ID", "InvoiceNo", "StockCode", "Description", "Quantity",
+#                             "InvoiceDate", "UnitPrice", "CustomerID", "Country"]
 
-                # # Combine the frequent itemsets and association rules into a single DataFrame
-                # result_df = pd.concat([frequent_itemsets_df, association_rules_df], axis=1)
-                # result_df_sorted = result_df.sort_values(by ='Support', ascending=False)
-                # # items = data["items"]
+#                 dfP= df.head(2)
+#                 # Convertir le DataFrame en HTML sans l'index
+#                 df_html = dfP.to_html(index=False)
 
-                # frequent_itemsets_df["Support_ratio"] = frequent_itemsets_df["Support"] / len(transactions)
-                # frequent_itemsets_df_sorted["Support_ratio"] = frequent_itemsets_df_sorted["Support"] / len(transactions)
+#                 # Affichage du tableau sans l'index
+#                 st.write(df_html, unsafe_allow_html=True)
+#                 Affichage du DataFrame dans une table Streamlit
+#                 Convert the dataset into the required format
+#                 transactions = []
+#                 for i in range(len(df)):
+#                     transaction = []
+#                     try:
+#                         transaction.append(str(df['InvoiceNo'][i]))
+#                         transaction.append(str(df['StockCode'][i]))
+#                         transaction.append(str(df['Quantity'][i]))
+#                         transaction.append(str(df['UnitPrice'][i]))
+#                         transaction.append(str(df['Description'][i]))
+#                         transaction.append(str(df['CustomerID'][i]))
+#                         transaction.append(str(df['InvoiceDate'][i]))
+#                         transactions.append(transaction)
+#                     except:
+#                         continue
 
-                # st.write(frequent_itemsets_df.head())
 
-                # association_rules_df[['Confidence', 'Confidence_score']] = association_rules_df['Confidence'].apply(pd.Series)
-                # association_rules_df = association_rules_df.rename(columns={'Rule': 'Antecedent', 'Confidence': 'Consequent'})
-                # association_rules_df_sorted = association_rules_df.sort_values(by ='Confidence_score', ascending=True)
-                # st.write(association_rules_df_sorted.head())
-                # # Displaying the results as a table
-                # st.table(items)
+#                 st.write(len(transactions))
+#                 st.write(transactions[:1])
 
-                descriptions = [result[3] for result in data['items']]
+#                 # Perform frequent itemset mining using FPGrowth
+#                 patterns = pyfpgrowth.find_frequent_patterns(transactions, 30)  # Adjust the support threshold as needed
 
-                 # Générer et afficher le nuage de mots
-                fig: Figure
-                ax: Axes
-                fig, ax = plt.subplots()
-                wordcloud = WordCloud(background_color='white', width=1200, height=1200).generate(str(descriptions))
-                ax.imshow(wordcloud, interpolation='bilinear')
-                ax.axis('off')
-                st.pyplot(fig)
+#                 # Generate association rules from the frequent itemsets
+#                 rules = pyfpgrowth.generate_association_rules(patterns, 0.7)  # Adjust the confidence threshold as needed
+#                 # Create a DataFrame for frequent itemsets
+#                 frequent_itemsets_df = pd.DataFrame.from_records(list(patterns.items()), columns=['Itemset', 'Support'])
+#                 frequent_itemsets_df_sorted = frequent_itemsets_df.sort_values(by ='Support', ascending=False)
 
-    else:
-                st.error("Error: Unable to retrieve items.")
+#                 # Create a DataFrame for association rules
+#                 association_rules_df = pd.DataFrame.from_records(list(rules.items()), columns=['Rule', 'Confidence'])
+
+#                 # Combine the frequent itemsets and association rules into a single DataFrame
+#                 result_df = pd.concat([frequent_itemsets_df, association_rules_df], axis=1)
+#                 result_df_sorted = result_df.sort_values(by ='Support', ascending=False)
+#                 # items = data["items"]
+
+#                 frequent_itemsets_df["Support_ratio"] = frequent_itemsets_df["Support"] / len(transactions)
+#                 frequent_itemsets_df_sorted["Support_ratio"] = frequent_itemsets_df_sorted["Support"] / len(transactions)
+
+#                 st.write(frequent_itemsets_df.head())
+
+#                 association_rules_df[['Confidence', 'Confidence_score']] = association_rules_df['Confidence'].apply(pd.Series)
+#                 association_rules_df = association_rules_df.rename(columns={'Rule': 'Antecedent', 'Confidence': 'Consequent'})
+#                 association_rules_df_sorted = association_rules_df.sort_values(by ='Confidence_score', ascending=True)
+#                 st.write(association_rules_df_sorted.head())
+#                 # Displaying the results as a table
+#                 st.table(items)
+
+#                 descriptions = [result[3] for result in data['items']]
+
+#                  # Générer et afficher le nuage de mots
+#                 fig: Figure
+#                 ax: Axes
+#                 fig, ax = plt.subplots()
+#                 wordcloud = WordCloud(background_color='white', width=1200, height=1200).generate(str(descriptions))
+#                 ax.imshow(wordcloud, interpolation='bilinear')
+#                 ax.axis('off')
+#                 st.pyplot(fig)
+
+#     else:
+#                 st.error("Error: Unable to retrieve items.")
 
 
 #---------------------  Sidebar  ----------------------#
 # Menu déroulant pour sélectionner la page à afficher
-menu = ["HOME", "FRANCE", "PORTUGAL"]
+menu = ["HOME", "FRANCE"]
 choice = st.sidebar.selectbox(" ", menu)
 
 
@@ -268,7 +268,6 @@ choice = st.sidebar.selectbox(" ", menu)
 # Affichage de la page correspondant à la sélection du menu
 if choice == "HOME":
     home_page()
-elif choice == "FRANCE":
-    france_page()
+
 else:
-     portugal_page()
+    france_page()
