@@ -10,6 +10,7 @@ from matplotlib.figure import Figure
 from matplotlib.axes import Axes
 
 
+
 # model = pickle.load(open('model.pkl', 'rb'))
 
 # # Fonction qui charge le modèle entraîné
@@ -36,6 +37,7 @@ dataFrance = response.json()
 url2 = "https://apimarketanalysis.azurewebsites.net/portugal"
 response = requests.get(url2)
 dataPortugal = response.json()
+
 
 def home_page():
     st.title("HOME")
