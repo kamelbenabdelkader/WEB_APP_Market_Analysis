@@ -47,6 +47,8 @@ isoduration==20.11.0
 jax==0.4.8
 jedi==0.18.2
 Jinja2==3.1.2
+json5==0.9.10
+jsonpath-ng==1.5.3
 jsonpointer==2.3
 jsonschema==4.17.3
 jupyter-events==0.6.3
@@ -66,6 +68,8 @@ matplotlib-inline==0.1.6
 mdurl==0.1.2
 mistune==2.0.5
 ml-dtypes==0.1.0
+mlflow==2.2.2
+mlxtend==0.21.0
 nbclassic==0.5.5
 nbclient==0.7.4
 nbconvert==7.3.1
@@ -97,6 +101,7 @@ pyasn1==0.5.0
 pyasn1-modules==0.3.0
 pycparser==2.21
 pydeck==0.8.1b0
+pyfpgrowth==1.0
 Pygments==2.15.1
 Pympler==1.0.1
 pyparsing==3.0.9
